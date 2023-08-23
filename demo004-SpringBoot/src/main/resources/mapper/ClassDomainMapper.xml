@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.wusdragon.mapper.ClassDomainMapper">
+
+    <!--    <select id="getById" resultType="com.wusdragon.pojo.ClassDomain">-->
+    <!--        select * from `class` where 1 = 1-->
+    <!--        <if test="id != 1 and id != 2 and id != 3 and id != 4 ">-->
+    <!--            and className is not null-->
+    <!--        </if>-->
+    <!--        and address is not null-->
+    <!--    </select>-->
+
+    <select id="getById" resultType="com.wusdragon.pojo.User">
+        select * from `class` where 1 = 1
+        <if test="id not in (3,6,4,6)">
+            and className is not null
+        </if>
+        and address is not null
+    </select>
+</mapper>
